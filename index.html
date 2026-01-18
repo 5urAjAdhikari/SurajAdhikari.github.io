@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Suraj | Academic Portfolio</title>
+  <title>Suraj Adhikari | Academic Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Font -->
@@ -12,6 +12,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
+    /* --- General --- */
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -19,91 +20,198 @@
       color: #222;
       scroll-behavior: smooth;
     }
-    section {
-      padding: 80px 10%;
-    }
+    section { padding: 80px 10%; }
+    h1,h2,h3 { margin: 0; }
+    h2 { margin-bottom: 30px; }
+
+    /* --- Hero --- */
     .hero {
       height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(to bottom, #111, #333);
-      color: white;
     }
-    h1 { font-size: 3rem; }
-    h2 { margin-bottom: 20px; }
-    .project {
+    .hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; }
+    .tagline { font-size: 1.2rem; opacity: 0.9; }
+    .scroll-indicator {
+      margin-top: 40px;
+      font-size: 1rem;
+      opacity: 0.7;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(10px);}
+    }
+
+    /* --- About --- */
+    .about p { line-height: 1.6; font-size: 1rem; }
+
+    /* --- Projects --- */
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      margin-bottom: 60px;
       background: white;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    iframe {
+    .project-card img { width: 100%; border-radius: 12px; }
+    .project-card ul { padding-left: 20px; }
+
+    /* --- Gallery --- */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+    .gallery img {
       width: 100%;
-      height: 315px;
-      border-radius: 12px;
+      border-radius: 14px;
+      transition: transform 0.3s ease;
     }
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* --- Video --- */
+    iframe { width: 100%; height: 315px; border-radius: 12px; }
+
+    /* --- Timeline --- */
+    .timeline-section { background: #f0f4f8; padding: 80px 10%; }
+    .timeline { position: relative; margin: 50px 0; padding-left: 40px; border-left: 3px solid #2c5364; }
+    .timeline-item { position: relative; margin-bottom: 50px; padding-left: 20px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 5px;
+      width: 20px; height: 20px;
+      background: #2c5364;
+      border-radius: 50%;
+    }
+    .timeline-date { font-weight: bold; margin-bottom: 8px; color: #0f2027; }
+    .timeline-content h3 { margin: 0 0 6px; font-size: 1.2rem; color: #203a43; }
+    .timeline-content p { margin: 0; line-height: 1.5; color: #333; }
+
+    /* --- Contact --- */
+    .contact p { margin-bottom: 10px; }
+
+    /* --- Mobile --- */
+    @media (max-width:768px){
+      .project-card { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 2.5rem; }
+    }
+
   </style>
 </head>
 
 <body>
 
+<!-- Hero -->
 <section class="hero">
-  <div data-aos="fade-up">
-    <h1>Suraj</h1>
-    <p>Student Researcher | Physics • Chemistry • Community Impact</p>
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Suraj Adhikari</h1>
+    <p class="tagline">Student Researcher · Physics · Chemistry · Community Impact</p>
+    <div class="scroll-indicator">↓ Scroll</div>
   </div>
 </section>
 
-<section data-aos="fade-right">
+<!-- About -->
+<section class="about" data-aos="fade-right">
   <h2>About Me</h2>
   <p>
-    I am a science student from Nepal with experience in research, academic projects,
-    and community leadership. My interests lie in applying scientific principles
-    to real-world problems.
+    I am a science student from Nepal with experience in research, academic projects, and community leadership. 
+    My focus is on applying scientific principles to real-world problems and contributing positively to my community.
   </p>
 </section>
 
-<section>
-  <h2 data-aos="fade-up">Projects</h2>
+<!-- Projects -->
+<section data-aos="fade-up">
+  <h2>Projects</h2>
 
-  <div class="project" data-aos="fade-left">
-    <h3>Radiation Dosimetry Research (NAST)</h3>
-    <p>• Calibration of TLD dosimeters<br>
-       • Data analysis and uncertainty estimation<br>
-       • Research paper published</p>
+  <div class="project-card" data-aos="fade-right">
+    <img src="nast.jpg" alt="NAST Research">
+    <div>
+      <h3>Radiation Dosimetry Research (NAST)</h3>
+      <ul>
+        <li>TLD calibration using Cs-137 source</li>
+        <li>Uncertainty analysis using Monte Carlo methods</li>
+        <li>Manuscript prepared for publication</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="project" data-aos="fade-right">
-    <h3>Safe Bites – Food Toxicity Analysis</h3>
-    <p>• Identification of toxic ions in food<br>
-       • Chemistry-based detection methods<br>
-       • Public safety focus</p>
+  <div class="project-card" data-aos="fade-left">
+    <img src="safebites.jpg" alt="Safe Bites Project">
+    <div>
+      <h3>Safe Bites – Food Toxicity Analysis</h3>
+      <ul>
+        <li>Identification of toxic ions in food items</li>
+        <li>Proposed chemistry-based detection methods</li>
+        <li>Focused on public health safety</li>
+      </ul>
+    </div>
   </div>
+
 </section>
 
-<section data-aos="fade-up">
+<!-- Gallery -->
+<section class="gallery-section" data-aos="fade-up">
   <h2>Gallery</h2>
-  <img src="your-photo.jpg" alt="Project photo">
+  <div class="gallery">
+    <img src="event1.jpg" alt="Event Photo">
+    <img src="lab1.jpg" alt="Lab Work">
+    <img src="presentation.jpg" alt="Presentation">
+  </div>
 </section>
 
-<section data-aos="zoom-in">
-  <h2>Project Video</h2>
-  <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-</section>
-
+<!-- Video -->
 <section data-aos="fade-up">
+  <h2>Project Demonstration</h2>
+  <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" loading="lazy" allowfullscreen></iframe>
+</section>
+
+<!-- Leadership & Activities Timeline -->
+<section class="timeline-section" data-aos="fade-up">
+  <h2>Leadership & Activities</h2>
+  <div class="timeline">
+
+    <div class="timeline-item" data-aos="fade-right">
+      <div class="timeline-date">2025–Present</div>
+      <div class="timeline-content">
+        <h3>President – Alumni Club, St. Xavier's College</h3>
+        <p>Leading alumni initiatives, organizing networking events, and fostering mentorship programs for students.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-aos="fade-left">
+      <div class="timeline-date">2025–Present</div>
+      <div class="timeline-content">
+        <h3>Vice President – +2 Alumni Club</h3>
+        <p>Coordinating community engagement and educational events for school alumni and students.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-aos="fade-right">
+      <div class="timeline-date">2024–Present</div>
+      <div class="timeline-content">
+        <h3>Community Service Avenue</h3>
+        <p>Organized panel discussions and practical education sessions, fostering student awareness and involvement.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" data-aos="fade-up">
   <h2>Contact</h2>
   <p>Email: yourname@email.com</p>
-  <p>GitHub: github.com/yourusername</p>
+  <p>GitHub: <a href="https://github.com/5urAjAdhikari" target="_blank">github.com/5urAjAdhikari</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">linkedin.com/in/YOUR_LINKEDIN</a></p>
 </section>
 
+<!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 900, once: true });
