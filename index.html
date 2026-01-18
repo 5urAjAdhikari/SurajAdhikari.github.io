@@ -1,108 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Suraj Adhikari | Academic Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Suraj Adhikari | Academic Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <style>
-    /* --- General --- */
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #222;
-      scroll-behavior: smooth;
-    }
-    section { padding: 80px 10%; }
-    h1,h2,h3 { margin: 0; }
-    h2 { margin-bottom: 30px; }
+<style>
+/* --- General --- */
+body { font-family: 'Inter', sans-serif; margin:0; background:#f9f9f9; color:#222; scroll-behavior:smooth; }
+section { padding:80px 10%; }
+h1,h2,h3 { margin:0; }
+h2 { margin-bottom:30px; }
 
-    /* --- Hero --- */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; }
-    .tagline { font-size: 1.2rem; opacity: 0.9; }
-    .scroll-indicator {
-      margin-top: 40px;
-      font-size: 1rem;
-      opacity: 0.7;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(10px);}
-    }
+/* --- Hero --- */
+.hero {
+  height:100vh;
+  background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-content h1 { font-size:3.5rem; margin-bottom:10px; }
+.tagline { font-size:1.2rem; opacity:0.9; }
+.scroll-indicator { margin-top:40px; font-size:1rem; opacity:0.7; animation:bounce 2s infinite; }
+@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(10px);}}
 
-    /* --- About --- */
-    .about p { line-height: 1.6; font-size: 1rem; }
+/* --- About --- */
+.about p { line-height:1.6; font-size:1rem; }
 
-    /* --- Projects --- */
-    .project-card {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 30px;
-      margin-bottom: 60px;
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    }
-    .project-card img { width: 100%; border-radius: 12px; }
-    .project-card ul { padding-left: 20px; }
+/* --- Education --- */
+.education-card {
+  background:white; padding:20px; margin-bottom:20px;
+  border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.education-card h3 { margin-bottom:5px; color:#203a43; }
+.education-card p { margin:2px 0; color:#333; }
 
-    /* --- Gallery --- */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
-    .gallery img {
-      width: 100%;
-      border-radius: 14px;
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover { transform: scale(1.05); }
+/* --- Projects --- */
+.project-card {
+  display:grid; grid-template-columns:1fr 2fr; gap:30px;
+  margin-bottom:60px; background:white; padding:30px; border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+.project-card img { width:100%; border-radius:12px; }
+.project-card ul { padding-left:20px; }
 
-    /* --- Video --- */
-    iframe { width: 100%; height: 315px; border-radius: 12px; }
+/* --- Gallery --- */
+.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+.gallery img { width:100%; border-radius:14px; transition:transform 0.3s ease; }
+.gallery img:hover { transform:scale(1.05); }
 
-    /* --- Timeline --- */
-    .timeline-section { background: #f0f4f8; padding: 80px 10%; }
-    .timeline { position: relative; margin: 50px 0; padding-left: 40px; border-left: 3px solid #2c5364; }
-    .timeline-item { position: relative; margin-bottom: 50px; padding-left: 20px; }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -10px;
-      top: 5px;
-      width: 20px; height: 20px;
-      background: #2c5364;
-      border-radius: 50%;
-    }
-    .timeline-date { font-weight: bold; margin-bottom: 8px; color: #0f2027; }
-    .timeline-content h3 { margin: 0 0 6px; font-size: 1.2rem; color: #203a43; }
-    .timeline-content p { margin: 0; line-height: 1.5; color: #333; }
+/* --- Video --- */
+iframe { width:100%; height:315px; border-radius:12px; }
 
-    /* --- Contact --- */
-    .contact p { margin-bottom: 10px; }
+/* --- Timeline --- */
+.timeline-section { background:#f0f4f8; padding:80px 10%; }
+.timeline { position:relative; margin:50px 0; padding-left:40px; border-left:3px solid #2c5364; }
+.timeline-item { position:relative; margin-bottom:50px; padding-left:20px; }
+.timeline-item::before {
+  content:''; position:absolute; left:-10px; top:5px; width:20px; height:20px;
+  background:#2c5364; border-radius:50%;
+}
+.timeline-date { font-weight:bold; margin-bottom:8px; color:#0f2027; }
+.timeline-content h3 { margin:0 0 6px; font-size:1.2rem; color:#203a43; }
+.timeline-content p { margin:0; line-height:1.5; color:#333; }
 
-    /* --- Mobile --- */
-    @media (max-width:768px){
-      .project-card { grid-template-columns: 1fr; }
-      .hero-content h1 { font-size: 2.5rem; }
-    }
+/* --- Contact --- */
+.contact p { margin-bottom:10px; }
 
-  </style>
+/* --- Mobile --- */
+@media (max-width:768px){
+  .project-card { grid-template-columns:1fr; }
+  .hero-content h1 { font-size:2.5rem; }
+}
+</style>
 </head>
 
 <body>
@@ -116,27 +95,40 @@
   </div>
 </section>
 
-<!-- About -->
+<!-- About Me -->
 <section class="about" data-aos="fade-right">
   <h2>About Me</h2>
-  <p>
-    I am a science student from Nepal with experience in research, academic projects, and community leadership. 
-    My focus is on applying scientific principles to real-world problems and contributing positively to my community.
-  </p>
+  <p>I am a science student from Nepal with experience in research, academic projects, and community leadership. My focus is on applying scientific principles to real-world problems while contributing positively to my community.</p>
 </section>
 
-<!-- Projects -->
+<!-- Education -->
 <section data-aos="fade-up">
-  <h2>Projects</h2>
+  <h2>Education</h2>
+  <div class="education-card" data-aos="fade-right">
+    <h3>Saint Xaviers College, Maitighar</h3>
+    <p>Post-graduate / Grade 12</p>
+    <p>GPA: 3.96 / 4.0 (Unweighted)</p>
+    <p>National Board Topper, Academic Excellence Award</p>
+    <p>Graduation: Sep 2025</p>
+  </div>
+  <div class="education-card" data-aos="fade-left">
+    <h3>Surya Deep English Secondary School, Sallaghari</h3>
+    <p>Grades 10-12 (2019-2023)</p>
+    <p>Merit Scholarship – Sole recipient (Grade 4-10)</p>
+  </div>
+</section>
+
+<!-- Projects & Research -->
+<section data-aos="fade-up">
+  <h2>Research & Projects</h2>
 
   <div class="project-card" data-aos="fade-right">
     <img src="nast.jpg" alt="NAST Research">
     <div>
-      <h3>Radiation Dosimetry Research (NAST)</h3>
+      <h3>Research Intern – Radiation Physics, NAST</h3>
       <ul>
-        <li>TLD calibration using Cs-137 source</li>
-        <li>Uncertainty analysis using Monte Carlo methods</li>
-        <li>Manuscript prepared for publication</li>
+        <li>Researched TLD linearity, scattered radiation, measurement uncertainty under PhD supervision</li>
+        <li>Published 2 papers; 3 manuscripts under review</li>
       </ul>
     </div>
   </div>
@@ -153,6 +145,17 @@
     </div>
   </div>
 
+  <div class="project-card" data-aos="fade-right">
+    <img src="tesla.jpg" alt="Tesla Coil">
+    <div>
+      <h3>InnoChem'25 Tesla Coil Project</h3>
+      <ul>
+        <li>Engineered Tesla coil; demonstrated wireless energy transfer</li>
+        <li>Presented theoretical applications; won Popular Choice Award</li>
+      </ul>
+    </div>
+  </div>
+
 </section>
 
 <!-- Gallery -->
@@ -165,7 +168,7 @@
   </div>
 </section>
 
-<!-- Video -->
+<!-- Videos -->
 <section data-aos="fade-up">
   <h2>Project Demonstration</h2>
   <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" loading="lazy" allowfullscreen></iframe>
@@ -195,8 +198,16 @@
     <div class="timeline-item" data-aos="fade-right">
       <div class="timeline-date">2024–Present</div>
       <div class="timeline-content">
-        <h3>Community Service Avenue</h3>
-        <p>Organized panel discussions and practical education sessions, fostering student awareness and involvement.</p>
+        <h3>Community Service & Volunteer Work</h3>
+        <p>Rotaract Club of Baneshwor Royale, Code Hiking 2024, Health Drives; organized events and logistics impacting 500+ students.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-aos="fade-left">
+      <div class="timeline-date">2019–2023</div>
+      <div class="timeline-content">
+        <h3>School Captain – Surya Deep English Secondary School</h3>
+        <p>Elected School Captain; organized weekly assemblies, delivered speeches to 150+ students, co-coordinated science expos and sports events.</p>
       </div>
     </div>
 
@@ -213,9 +224,7 @@
 
 <!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 900, once: true });
-</script>
+<script> AOS.init({ duration:900, once:true }); </script>
 
 </body>
 </html>
